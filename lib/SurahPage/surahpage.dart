@@ -34,7 +34,7 @@ class _SurahPageState extends State<SurahPage> {
         backgroundColor: Color(0xFF469565),
         title: Text(
           widget.surah.name,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 20, fontFamily: "Kalpurush"),
         ),
         centerTitle: true,
       ),
@@ -65,16 +65,25 @@ class _SurahPageState extends State<SurahPage> {
                     alignment: Alignment(1, 0),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(ayats[index].ayat),
+                      child: Text(
+                        ayats[index].ayat,
+                        style: TextStyle(fontFamily: "Katibeh"),
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Bangla \n" + ayats[index].banglaTranslation),
+                    child: Text(
+                      "Bangla \n" + ayats[index].banglaTranslation,
+                      style: TextStyle(fontFamily: "Kalpurush"),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("English \n" + ayats[index].englishTranslation),
+                    child: Text(
+                      "English \n" + ayats[index].englishTranslation,
+                      style: TextStyle(fontFamily: "Lato"),
+                    ),
                   )
                 ],
               ),
