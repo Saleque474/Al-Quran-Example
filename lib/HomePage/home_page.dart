@@ -49,43 +49,44 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   ...surahs
-                      .map((surah) => Padding(
-                            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => SurahPage(surah)));
-                              },
-                              child: Material(
-                                color: Colors.transparent,
-                                shape: RoundedRectangleBorder(
+                      .map(
+                        (surah) => Padding(
+                          padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SurahPage(surah)));
+                            },
+                            child: Material(
+                              color: Colors.transparent,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              elevation: 3,
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFc0cdc4),
                                     borderRadius: BorderRadius.circular(10)),
-                                elevation: 3,
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.9,
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xFFc0cdc4),
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: Text(surah.name),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: Text("${surah.surahNo}"),
-                                      )
-                                    ],
-                                  ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Text(surah.name),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Text("${surah.surahNo}"),
+                                    )
+                                  ],
                                 ),
                               ),
                             ),
-                          ))
+                          ),
+                        ),
+                      )
                       .toList()
                 ],
               ),
